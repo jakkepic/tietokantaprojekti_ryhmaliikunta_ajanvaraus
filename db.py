@@ -1,12 +1,13 @@
 from app import app
 from flask_sqlalchemy import SQLAlchemy
-from models import User
 from os import getenv
 from werkzeug.security import check_password_hash, generate_password_hash
 
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
-app.config["SQLALCHEMY_DATABASE_URI"] = getenv("DATABASE_URL")
+app.config["SQLALCHEMY_DATABASE_URI"] = getenv("DATABASE_URL").replace("://", "ql://", 1)
 db = SQLAlchemy(app)
+
+
 
 def save_user(database, username: str, password: str):
     result = database.session.execute("SELECT id, password FROM users WHERE username=:username", {"username":username})

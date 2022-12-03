@@ -1,6 +1,6 @@
 from app import app
 from flask import redirect, render_template, request, session
-from db import db
+from db import db, fetch_lessons, feth_user_bookings
 from db import save_user, check_password
 
 @app.route("/")
@@ -9,8 +9,9 @@ def index():
 
 @app.route("/home", methods=["GET"])
 def home():
-    test_lessons = ["test", "toimii"]
-    return render_template("home.html", lessons=test_lessons)
+    usrname = session["username"]
+    lessons = feth_user_bookings(db, usrname)
+    return render_template("home.html", lessons=lessons)
 
 
 @app.route("/login", methods=["POST"])

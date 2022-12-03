@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+        <title>Homepage</title>
+
+    </head>
+    <body>
+        <header>
+
+        </header>
+        <main>
+            <p>You are signed in to the account {{ session.username }}</p>
+            <br>
+
+            <ul>
+                {% for lesson in lessons %}
+                    <li>
+                        <p>{{lesson}}</p>
+                    </li>
+                {% endfor %}
+            </ul>
+            <br>
+
+            <a href="/logout">Sign out</a>
+
+        </main>
+        <footer>
+
+        </footer>
+    </body>
+</html>

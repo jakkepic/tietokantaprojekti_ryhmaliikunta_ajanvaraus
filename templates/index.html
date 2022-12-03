@@ -2,7 +2,7 @@
 <html>
     <head>
 
-        <title>Homepage</title>
+        <title>Login</title>
 
     </head>
     <body>
@@ -11,7 +11,7 @@
         </header>
         <main>
             {% if session.username %}
-            <p>You are signed in to the account {{ session.username }}</p>
+            <a href="/home">Continue as {{ session.username }}</a>
             <a href="/logout">Sign out</a>
 
             {% else %}

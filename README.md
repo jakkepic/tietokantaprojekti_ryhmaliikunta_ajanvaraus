@@ -12,14 +12,13 @@ jossa voi ilmoittautua ryhmäliikuntavuoroihin.
 - Ohjelma pitää huolen ettei sama käyttäjä ilmoittaudu kahdesti samaan ryhmään
 
 ### Nykyinen toiminnallisuus:
+Sovellus on vielä hyvin keskeneräinen, mutta sovellusta voi kokeilla paikallisesti flaskin avulla, tai fly.io:lla.
+
+Tällä hetkellä sovelluksessa toimii:
 - Kirjautuminen ja tunnuksen luominen
 
-### Käyttäminen (nykyinen tila 20.11.22)
-Sovellus on vielä hyvin keskeneräinen. 
 
-Tällä hetkellä en ole saanut testattua tuotannossa, minulla on ongelmia fly.io:n kanssa (builder ei luo postgres psycopg2 pakettia).
-Ongelma saattaa ratkea luomalla Dockerfile, mutta en ole vielä ehtinyt kokeilla.
-
+### Testaaminen:
 Tällä hetkellä sovellusta voi testata flaskin avulla
 1. Tarkista riippuvuudet
 2. Avaa postgresql-tietokanta (avaa terminaali ja syötä komento "psql")
